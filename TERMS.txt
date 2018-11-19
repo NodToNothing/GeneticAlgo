@@ -1,0 +1,12 @@
+* artificial intelligence - John McCarthy 1956 (invented Lisp)
+* candidate solution
+* cost
+* deterministic approach
+* fitness
+* heuristic - best guess (taking an increasing step)
+* hyperparameters - parameters chosen in advance
+* machine learning - Arthur Samuel 1959 (computer checkers)
+* spirangle
+* stochastic (search) - basically random
+* stopping criteria - like in recursion
+* Turtle - Python app originally in Logo (Seymore Papert)
