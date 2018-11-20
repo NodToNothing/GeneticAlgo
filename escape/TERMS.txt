@@ -22,6 +22,8 @@
 * Iterative Dichotomiser 3 - decision tree by JR Quinlan, 1985.
 * leaf node
 * machine learning - Arthur Samuel 1959 (computer checkers)
+* oblique trees: example (-35 < 2x - y < 35)
+* overfitting - good on existing data, but poor on new data
 * pivot - one element to quicksort around
 * prune
 * purity
@@ -31,6 +33,8 @@
 * stochastic (search) - basically random
 * stopping criteria - like in recursion
 * supervised learning - uses training data
+* support vector machines: curved and complicated dividing lines (versus oblique straight)
 * training data
+* train, validate, test
 * Turtle - Python app originally in Logo (Seymore Papert)
 

@@ -77,8 +77,27 @@ def as_rule_str(tree, label, ident=0):
 	s+= '\n'
 	return s
 
+def find_edges(tree, label, X, Y):
+	X.sort()
+	Y.sort()
+	diagonals = [i for i in set(X).intersection(set(Y))]
+	diagonals.sort
+	L = [classify(tree, label, [d, d]) for d in diagonals]
+	low = L.index(False)
+	min_x = X[low]
+	min_y = Y[low]
+
+	high = L[::-1].index(False)
+	max_x = X[len(X)-1 - high]
+	max_y = Y[len(Y)-1 - high]
+
+	return (min_x, min_y), (max_x, max_y)
+
+
 if __name__ == '__main__':
 
+	#got data_square and
+	#data_rand
 	with open(r"C:\Users\u0024159\Documents\GitHub\GeneticAlgo\escape\data_square","rb") as f:
 		L = pickle.load(f)
 		data = L
@@ -94,7 +113,10 @@ if __name__ == '__main__':
 	label = ['x', 'y', 'out']
 
 	tree = create_tree(data, label)
+
 	print(as_rule_str(tree, label))
-	print(classify(tree, label, [1,1]))
-	print(classify(tree, label, [1,2])) #this is none when we don't have y=2 data
-	print(classify(tree, label, [1,4]))
+	print(find_edges(tree, label, [x[0] for x in L], [y[0] for y in L]))
+
+	#print(classify(tree, label, [1,1]))
+	#print(classify(tree, label, [1,2])) #this is none when we don't have y=2 data
+	#print(classify(tree, label, [1,4]))
