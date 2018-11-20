@@ -1,12 +1,35 @@
 * artificial intelligence - John McCarthy 1956 (invented Lisp)
 * candidate solution
+* category/target: Y values
+* classifier (decision tree for example)
+* classify
 * cost
+* decision tree: categorical or numerical.  Aim for the leaf node.
+** classification tree: category
+** regression tree: equation with a numerical value
+** bottom up - builds a classifier
+** top down (induction of decision trees) - divides the data
+** decision tree split quality (look it up)
 * deterministic approach
+* domain knowledge - important input into heuristics.
+* entropy - can be a heuristic.  Logarithmic.  If everything is identical, 0 entropy (coin flip).
+* features: X values
 * fitness
 * heuristic - best guess (taking an increasing step)
+* homogenous
 * hyperparameters - parameters chosen in advance
+* information gain - based against the baseline entropy (calculated using all data points)
+* Iterative Dichotomiser 3 - decision tree by JR Quinlan, 1985.
+* leaf node
 * machine learning - Arthur Samuel 1959 (computer checkers)
+* pivot - one element to quicksort around
+* prune
+* purity
+* random forest - picking a best feature
+* ruleset
 * spirangle
 * stochastic (search) - basically random
 * stopping criteria - like in recursion
+* supervised learning - uses training data
+* training data
 * Turtle - Python app originally in Logo (Seymore Papert)
