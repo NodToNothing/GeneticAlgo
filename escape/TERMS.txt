@@ -1,10 +1,12 @@
 * artificial intelligence - John McCarthy 1956 (invented Lisp)
+* axiom: X (replace symbols as you go)
 * candidate solution
 * cost
 * deterministic approach
 * fitness
 * heuristic - best guess (taking an increasing step)
 * hyperparameters - parameters chosen in advance
+* L-systems: grow recursively (Aristid Lindenmayer, biologist)
 * machine learning - Arthur Samuel 1959 (computer checkers)
 * spirangle
 * stochastic (search) - basically random
