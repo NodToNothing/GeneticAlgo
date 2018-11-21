@@ -15,6 +15,12 @@
 * entropy - can be a heuristic.  Logarithmic.  If everything is identical, 0 entropy (coin flip).
 * features: X values
 * fitness
+* genetic algorithm - breeds new solutions by splicing together parent solutions.  Good for fixed length solutions.  It's a guided random search (or heuristic search).
+** crossover
+** mutation
+** generation/s of solutions
+** epochs - number of attempts
+** genetic algorithm stopping criteria
 * heuristic - best guess (taking an increasing step)
 * homogenous
 * hyperparameters - parameters chosen in advance
