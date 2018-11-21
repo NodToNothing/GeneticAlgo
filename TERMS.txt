@@ -31,9 +31,11 @@
 * oblique trees: example (-35 < 2x - y < 35)
 * overfitting - good on existing data, but poor on new data
 * pivot - one element to quicksort around
+* proportionate selection
 * prune
 * purity
 * random forest - picking a best feature
+* roulette wheel selection
 * ruleset
 * spirangle
 * stochastic (search) - basically random
