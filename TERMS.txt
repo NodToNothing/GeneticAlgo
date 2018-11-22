@@ -12,6 +12,7 @@
 ** decision tree split quality (look it up)
 * deterministic approach
 * domain knowledge - important input into heuristics.
+* elitist selection - some solutions live on (instead of dying off)
 * entropy - can be a heuristic.  Logarithmic.  If everything is identical, 0 entropy (coin flip).
 * features: X values
 * fitness
@@ -31,6 +32,7 @@
 * oblique trees: example (-35 < 2x - y < 35)
 * overfitting - good on existing data, but poor on new data
 * pivot - one element to quicksort around
+* probalistic mutation - e.g. mutate randomly one in ten times as an example (versus deterministic)
 * proportionate selection
 * prune
 * purity
@@ -38,6 +40,7 @@
 * roulette wheel selection
 * ruleset
 * spirangle
+* stagnation - converges on a single solution (mutation avoids this - see genetic algorithm mutation rate on the web)
 * stochastic (search) - basically random
 * stopping criteria - like in recursion
 * supervised learning - uses training data
