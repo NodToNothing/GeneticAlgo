@@ -1,5 +1,6 @@
 import random
 import math
+import matplotlib
 import matplotlib.pyplot as plt
 
 def selection(generation, width):
@@ -33,7 +34,7 @@ def cumulative_probabilities(results):
 	return cp
 
 def selection (generation, width):
-	results = [hit_coordinate(theta, v, width)[1] for (teta, v) in generation]
+	results = [hit_coordinate(theta, v, width)[1] for (theta, v) in generation]
 	return cumulative_probabilities(results)
 
 def choose(choices):
@@ -46,7 +47,7 @@ def crossover(generation, width):
 	choices = selection(generation, width)
 	next_generation = []
 	for i in range(0, len(generation)):
-		num = generation[choose(choices)]
+		mum = generation[choose(choices)]
 		dad = generation[choose(choices)]
 		next_generation.append(breed(mum, dad))
 
@@ -80,7 +81,7 @@ def fire():
 
 	display_start_and_finish(generation0, generation, height, width)
 
-def display(generation, ax, hight, width):
+def display(generation, ax, height, width):
 	rect = plt.Rectangle((0,0), width, height, facecolor='grey')
 	ax.add_patch(rect)
 	ax.set_xlabel('x')
@@ -100,4 +101,53 @@ def display(generation, ax, hight, width):
 			ax.plot(x,y, 'bx-', linewidth=2.0)
 	print("Escaped", free)
 
+def launch(generation, height, width):
+	results = []
+	for (theta, v) in generation:
+		x_hit, y_hit = hit_coordinate(theta, v, width)
+		good = escaped(theta, v, width, height)
+		result = []
+		result.append((width/2.0, 0.0))
+		for i in range(1,20):
+			t = 1 * 0.2
+			x = width/2.0 + v * t * math.cos(theta)
+			y = v * t * math.sin(theta) - 0.5 * 9.81 * t * t
+			if y < 0: y = 0
+			if not good and not(0 < x < width):
+				result.append((x_hit, y_hit))
+				break
+			result.append((x,y))
+		results.append(result)
+	return results
 
+def display_start_and_finish(generation0, generation, height, width):
+	matplotlib.rcParams.update({'font.size':10})
+
+	fig = plt.figure()
+	ax0 = fig.add_subplot(2,1,1)
+	ax0.set_title('Initial attempt')
+	display(generation0, ax0, height, width)
+	ax = fig.add_subplot(2,1,2)
+	ax.set_title('Final attempt')
+	display(generation,ax, height, width)
+	plt.show()
+
+def random_tries(items):
+  return [(random.uniform(0.1, math.pi), random.uniform(2, 20)) 
+		  for _ in range(items)]
+
+def single_shot():
+  height = 5
+  width = 10
+  generation = [(math.pi/3, 8), (math.pi/4, 15), (math.pi/3, 15), (math.pi/3, 5)]
+  matplotlib.rcParams.update({'font.size': 18})
+  ax = plt.axes()
+  ax.set_title('Cannon balls fired once')
+  display(generation, ax, height, width)
+  plt.show()
+
+
+if __name__ == "__main__":
+  #
+  #single_shot()
+  fire()
